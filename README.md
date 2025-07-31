@@ -1,2 +1,2 @@
 # Portfolio
-Projetct Portfolio
+Project Portfolio
