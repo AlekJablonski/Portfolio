@@ -65,7 +65,8 @@ AND
 revenue>=200
 GROUP BY company_name;
 
---Display companies, total employees and revenues in the Technology and Telecommunications industries where there are more than 2000 employees and revenue totals $150,000,000 or more. Sort employees from high to low.
+--Display companies, total employees and revenues in the Technology and Telecommunications industries where there are more than 2000 employees and revenue totals $150,000,000 or more.
+Sort employees from high to low.
 
 SELECT company_name
 , employees AS 'Total Employees'
@@ -87,7 +88,8 @@ FROM fortune_companies
 GROUP BY industry
 HAVING avg('Average PTO days'>=14);
 
---Display the average employee tenure for all industries as average tenure. Create column called 'Employee Retention' for each industry; where average tenure of 6 years or more is good, 4 to under 6 years is average and under 4 years is poor.
+--Display the average employee tenure for all industries as average tenure. 
+Create column called 'Employee Retention' for each industry; where average tenure of 6 years or more is good, 4 to under 6 years is average and under 4 years is poor.
 
 SELECT industry
 , ROUND(avg(avg_employee_tenure),1) AS 'Average Tenure'
@@ -99,7 +101,8 @@ END AS 'Employee Retention'
 FROM fortune_companies
 GROUP BY industry;
 
---Create employee retention column for companies using same categories as above. Where average tenure of 6 years or more is good, 4 to under 6 years is average and under 4 years is poor. Display number of companies in all categories which have healtcare benefits, 12 weeks or more maternity leave, and PTO days of 14 or more. 
+--Create employee retention column for companies using same categories as above. Where average tenure of 6 years or more is good, 4 to under 6 years is average and under 4 years is poor. 
+Display number of companies in all categories which have healtcare benefits, 12 weeks or more maternity leave, and PTO days of 14 or more. 
  
 SELECT
 CASE
