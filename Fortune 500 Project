@@ -56,7 +56,7 @@ VALUES
     ('Company JJ', 'Manufacturing', 370.0, 3100, 1, 20, 12, 7.6),
     ('Company KK', 'Healthcare', 150.2, 3400, 0, 16, 8, 5.3);
 
---Display companies in the Technology and Telecommunications industries that revenue 2000 dollars or more.
+--Display companies in the Technology and Telecommunications industries that revenue $200,000,000 or more.
 
 SELECT company_name
 FROM fortune_companies
@@ -102,7 +102,7 @@ GROUP BY industry;
 --Create employee retention column for companies using same categories as above. Where average tenure of 6 years or more is good, 4 to under 6 years is average and under 4 years is poor. Display number of companies in all categories which have healtcare benefits, 12 weeks or more maternity leave, and PTO days of 14 or more. 
  
 SELECT
- CASE
+CASE
 WHEN avg_employee_tenure>=6 THEN 'Good'
 WHEN avg_employee_tenure<4 THEN 'Poor'
 ELSE 'Average'
@@ -116,8 +116,8 @@ AND
 paid_time_off_days>=14
 GROUP BY
 CASE
-    WHEN avg_employee_tenure >= 6 THEN 'Good'
-    WHEN avg_employee_tenure < 4 THEN 'Poor'
-    ELSE 'Average'
-  END;
+WHEN avg_employee_tenure >= 6 THEN 'Good'
+WHEN avg_employee_tenure < 4 THEN 'Poor'
+ELSE 'Average'
+END;
 
