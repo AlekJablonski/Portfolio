@@ -124,3 +124,13 @@ WHEN avg_employee_tenure < 4 THEN 'Poor'
 ELSE 'Average'
 END;
 
+--Calculate percentage of companies which have less than 2800 employees and revenue $300,000,000 or more.
+
+SELECT 
+(COUNT
+(CASE 
+WHEN employees<2800 AND revenue>=300 
+THEN 1 
+END)
+*100/COUNT (*)) AS 'Percent'
+FROM fortune_companies;
