@@ -86,7 +86,7 @@ SELECT industry
 , paid_time_off_days AS 'Average PTO days'
 FROM fortune_companies
 GROUP BY industry
-HAVING avg('Average PTO days'>=14);
+HAVING avg(paid_time_off_days)>=14;
 
 --Display the average employee tenure for all industries as average tenure. 
 Create column called 'Employee Retention' for each industry; where average tenure of 6 years or more is good, 4 to under 6 years is average and under 4 years is poor.
