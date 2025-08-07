@@ -56,7 +56,9 @@ VALUES
     ('Company JJ', 'Manufacturing', 370.0, 3100, 1, 20, 12, 7.6),
     ('Company KK', 'Healthcare', 150.2, 3400, 0, 16, 8, 5.3);
 
---Display companies in the Technology and Telecommunications industries that revenue $200,000,000 or more.
+Here are 6 questions and queries using the above table. The following are demonstrated filtering using WHERE, HAVING clauses, CASE statements and calculation.
+
+--1.Display companies in the Technology and Telecommunications industries that revenue $200,000,000 or more.
 
 SELECT company_name
 FROM fortune_companies
@@ -65,7 +67,7 @@ AND
 revenue>=200
 GROUP BY company_name;
 
---Display companies, total employees and revenues in the Technology and Telecommunications industries where there are more than 2000 employees and revenue totals $150,000,000 or more.
+--2.Display companies, total employees and revenues in the Technology and Telecommunications industries where there are more than 2000 employees and revenue totals $150,000,000 or more.
 --Sort employees from high to low.
 
 SELECT company_name
@@ -80,7 +82,7 @@ revenue>=150
 GROUP BY company_name
 ORDER BY employees DESC;
 
---Display industries and Average PTO days in which the average amount of PTO days is 14 days or more.
+--3.Display industries and Average PTO days in which the average amount of PTO days is 14 days or more.
 
 SELECT industry 
 , paid_time_off_days AS 'Average PTO days'
@@ -88,7 +90,7 @@ FROM fortune_companies
 GROUP BY industry
 HAVING avg(paid_time_off_days)>=14;
 
---Display the average employee tenure for all industries as average tenure. 
+--4.Display the average employee tenure for all industries as average tenure. 
 --Create column called 'Employee Retention' for each industry; where average tenure of 6 years or more is good, 4 to under 6 years is average and under 4 years is poor.
 
 SELECT industry
@@ -101,7 +103,7 @@ END AS 'Employee Retention'
 FROM fortune_companies
 GROUP BY industry;
 
---Create employee retention column for companies using same categories as above. Where average tenure of 6 years or more is good, 4 to under 6 years is average and under 4 years is poor. 
+--5.Create employee retention column for companies using same categories as above. Where average tenure of 6 years or more is good, 4 to under 6 years is average and under 4 years is poor. 
 --Display number of companies in all categories which have healtcare benefits, 12 weeks or more maternity leave, and PTO days of 14 or more. 
  
 SELECT
@@ -124,7 +126,7 @@ WHEN avg_employee_tenure < 4 THEN 'Poor'
 ELSE 'Average'
 END;
 
---Calculate percentage of companies which have less than 2800 employees and revenue $300,000,000 or more.
+--6.Calculate percentage of companies which have less than 2800 employees and revenue $300,000,000 or more.
 
 SELECT 
 (COUNT
