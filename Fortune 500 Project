@@ -80,7 +80,7 @@ revenue>=150
 GROUP BY company_name
 ORDER BY employees DESC;
 
---Display industries and amount of PTO days where the average is 14 days or more.
+--Display industries and Average PTO days in which the average amount of PTO days is 14 days or more.
 
 SELECT industry 
 , paid_time_off_days AS 'Average PTO days'
