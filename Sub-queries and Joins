@@ -158,7 +158,7 @@ FROM vips
 GROUP BY vips.event
 HAVING COUNT(vips.member_id)>=3)
 
-(Here I wrote a question which requires an aggrevate in a sub query before the main query) 
+(Here I wrote a question which requires an aggregate in a sub query before the main query) 
 --List the first and last names of VIPs who joined before the earliest member of the "US Department of Natural Resources" association type.
 
 SELECT vips.first_name
@@ -169,7 +169,7 @@ SELECT vips.first_name
  WHERE association='US Department of Natural Resources')
  ;
 
-(Here I wrote a question which requires a table to be divided into two tables to differintiate two different categories in the same row)
+(Here I wrote a question which requires a table to be divided into two tables via a SELF JOIN to differentiate two different categories in the same row)
 --List all VIPs that provide feedback to another member. Showing both critic and critiquee names in the same row.
 
 SELECT A.first_name AS 'Critic first name'
