@@ -194,17 +194,3 @@ INNER JOIN hotels
 ON reservations.hotel=hotels.hotel_id
 WHERE reservations.welcome_rsvp=1
 ;
-
-(Here I wrote a question which requires all information from a column but also requires information to be excluded)
---List all hotels and the names of VIP members staying at them. Include all hotels, but only show reservations that are associated with an actual VIP.
-
-SELECT hotels.hotel_name
-, vips.first_name
-, vips.last_name
-FROM hotels
-LEFT JOIN reservations
-ON reservations.hotel=hotels.hotel_id
-LEFT JOIN vips
-ON reservations.member_id=vips.member_id
-AND vips.member_id IS NOT NULL
-;
